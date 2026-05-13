@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>江苏高考备考计划（物化生选科）· 修订版</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* light theme */
+    --bg: #fafaf7;
+    --bg-elev: #ffffff;
+    --bg-soft: #f3f1ec;
+    --text: #1f2933;
+    --text-soft: #475467;
+    --text-mute: #8b96a3;
+    --border: #e5e2db;
+    --border-soft: #efece5;
+    --accent: #0f766e;
+    --accent-soft: #ccfbf1;
+    --accent-deep: #0b5e58;
+    --warn: #b54708;
+    --warn-soft: #fef3c7;
+    --warn-bg: #fffbeb;
+    --danger: #b42318;
+    --danger-soft: #fee4e2;
+    --danger-bg: #fef3f2;
+    --success: #027a48;
+    --success-soft: #d1fae5;
+    --success-bg: #ecfdf5;
+    --info: #1849a9;
+    --info-soft: #d1e9ff;
+    --info-bg: #eff8ff;
+    --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+    --shadow: 0 4px 14px rgba(16, 24, 40, 0.06);
+    --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.08);
+    --radius: 8px;
+    --radius-lg: 14px;
+    --serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "宋体", "SimSun", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    --mono: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+  }
+
+  [data-theme="dark"] {
+    --bg: #0f1418;
+    --bg-elev: #161c22;
+    --bg-soft: #1c242c;
+    --text: #e8edf2;
+    --text-soft: #b0bac4;
+    --text-mute: #6c7884;
+    --border: #2a333c;
+    --border-soft: #222a32;
+    --accent: #2dd4bf;
+    --accent-soft: #134e4a;
+    --accent-deep: #5eead4;
+    --warn: #fbbf24;
+    --warn-soft: #422006;
+    --warn-bg: #261a08;
+    --danger: #fca5a5;
+    --danger-soft: #4c1d1a;
+    --danger-bg: #2a1715;
+    --success: #6ee7b7;
+    --success-soft: #064e3b;
+    --success-bg: #0c2620;
+    --info: #93c5fd;
+    --info-soft: #1e3a8a;
+    --info-bg: #0e1d36;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  /* ====== reading progress ====== */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+    z-index: 100;
+    transition: width 0.1s linear;
+  }
+
+  /* ====== top bar ====== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg-elev);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg-elev) 90%, transparent);
+  }
+  .topbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+  }
+  .brand-mark {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: var(--shadow-sm);
+  }
+  .brand-sub {
+    font-size: 12px;
+    color: var(--text-mute);
+    font-weight: 400;
+    margin-left: 8px;
+    padding-left: 12px;
+    border-left: 1px solid var(--border);
+  }
+  .topbar-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .icon-btn {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-elev);
+    color: var(--text-soft);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: all 0.15s;
+    font-size: 16px;
+  }
+  .icon-btn:hover { background: var(--bg-soft); color: var(--accent); border-color: var(--accent); }
+  .icon-btn:active { transform: scale(0.96); }
+
+  /* ====== layout ====== */
+  .layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 28px 64px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 980px) {
+    .layout { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+    .toc-wrapper { position: static !important; }
+    .toc { max-height: none; }
+  }
+
+  /* ====== TOC ====== */
+  .toc-wrapper {
+    position: sticky;
+    top: 76px;
+    align-self: start;
+  }
+  .toc {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 8px 14px 14px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc::-webkit-scrollbar { width: 4px; }
+  .toc::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .toc-title {
+    font-size: 12px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    padding: 4px 6px 10px;
+  }
+  .toc-list { list-style: none; }
+  .toc-list a {
+    display: block;
+    padding: 6px 10px;
+    font-size: 13.5px;
+    color: var(--text-soft);
+    text-decoration: none;
+    border-radius: 6px;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    line-height: 1.5;
+    transition: all 0.12s;
+  }
+  .toc-list a:hover {
+    color: var(--accent);
+    background: var(--bg-soft);
+  }
+  .toc-list a.active {
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-left-color: var(--accent);
+    font-weight: 500;
+  }
+  [data-theme="dark"] .toc-list a.active {
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+  }
+
+  /* ====== content ====== */
+  .content { min-width: 0; }
+
+  /* hero */
+  .hero {
+    background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+    color: white;
+    padding: 32px 36px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 13.5px;
+    opacity: 0.93;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-meta span::before {
+    content: "•";
+    margin-right: 4px;
+    opacity: 0.5;
+  }
+  .hero-meta span:first-child::before { display: none; }
+  .hero-revision {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    font-size: 13px;
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+  }
+  .hero-revision strong { font-weight: 600; }
+
+  /* sections */
+  .section {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-sm);
+    scroll-margin-top: 84px;
+  }
+  @media (max-width: 720px) {
+    .section { padding: 20px 18px; }
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .section-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 10px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+  }
+  [data-theme="dark"] .section-num {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .section h3 {
+    font-size: 16.5px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 22px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+    line-height: 1.4;
+  }
+  .section h4 {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 18px 0 8px;
+  }
+
+  .section p { margin: 8px 0; color: var(--text-soft); }
+  .section strong { color: var(--text); font-weight: 600; }
+
+  .section ul, .section ol {
+    margin: 8px 0 12px 22px;
+    color: var(--text-soft);
+  }
+  .section li { margin: 4px 0; line-height: 1.7; }
+  .section li::marker { color: var(--text-mute); }
+
+  /* inline tags */
+  code {
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--bg-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--accent-deep);
+    border: 1px solid var(--border-soft);
+  }
+  [data-theme="dark"] code { color: var(--accent-deep); }
+
+  /* tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 14px 0;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: var(--bg-elev);
+  }
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-soft);
+    color: var(--text-soft);
+    line-height: 1.55;
+    vertical-align: top;
+  }
+  th {
+    background: var(--bg-soft);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--bg-soft); }
+  td strong { color: var(--text); }
+
+  /* callouts */
+  .callout {
+    margin: 14px 0;
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    border-left: 3px solid;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .callout-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .callout p { margin: 4px 0; }
+  .callout ul, .callout ol { margin-left: 22px; margin-top: 6px; }
+
+  .callout-info { background: var(--info-bg); border-color: var(--info); color: var(--text); }
+  .callout-info .callout-title { color: var(--info); }
+  .callout-warn { background: var(--warn-bg); border-color: var(--warn); color: var(--text); }
+  .callout-warn .callout-title { color: var(--warn); }
+  .callout-danger { background: var(--danger-bg); border-color: var(--danger); color: var(--text); }
+  .callout-danger .callout-title { color: var(--danger); }
+  .callout-success { background: var(--success-bg); border-color: var(--success); color: var(--text); }
+  .callout-success .callout-title { color: var(--success); }
+  .callout p, .callout li { color: var(--text-soft); }
+  .callout strong { color: var(--text); }
+
+  /* badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 600;
+    background: var(--bg-soft);
+    color: var(--text-soft);
+    border: 1px solid var(--border);
+    line-height: 1.5;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
+  }
+  .badge-revise { background: var(--warn-bg); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 30%, transparent); }
+  .badge-new { background: var(--success-bg); color: var(--success); border-color: color-mix(in srgb, var(--success) 30%, transparent); }
+  .badge-key { background: var(--danger-bg); color: var(--danger); border-color: color-mix(in srgb, var(--danger) 30%, transparent); }
+  .badge-info { background: var(--info-bg); color: var(--info); border-color: color-mix(in srgb, var(--info) 30%, transparent); }
+
+  /* code block (for templates) */
+  pre {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 12px 0;
+    white-space: pre;
+  }
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* card grid for templates / lists */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 14px 0;
+  }
+  .mini-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    transition: all 0.15s;
+  }
+  .mini-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+  }
+  .mini-card h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .mini-card p { font-size: 13px; color: var(--text-soft); margin: 0; }
+
+  /* timeline (for chapter 12) */
+  .timeline {
+    margin: 18px 0;
+    padding-left: 8px;
+    border-left: 2px solid var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    padding: 6px 0 16px 22px;
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px; top: 12px;
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 2px solid var(--bg-elev);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+  }
+  .timeline-item.alert::before { background: var(--danger); box-shadow: 0 0 0 2px var(--danger-soft); }
+  .timeline-month {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .timeline-month .badge { margin-left: 6px; }
+  .timeline-body { font-size: 13.5px; color: var(--text-soft); }
+  .timeline-body ul { margin-left: 18px; }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    color: var(--text-mute);
+    font-size: 12.5px;
+    padding: 32px 0 16px;
+    line-height: 1.7;
+  }
+  .footer em { color: var(--text-soft); font-style: italic; }
+
+  /* back to top */
+  .top-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s;
+    z-index: 40;
+  }
+  .top-btn.show { opacity: 1; visibility: visible; }
+  .top-btn:hover { background: var(--accent-deep); transform: translateY(-2px); }
+
+  /* mobile TOC drawer */
+  .toc-toggle {
+    display: none;
+  }
+  @media (max-width: 980px) {
+    .toc-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--text-soft);
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .toc-wrapper { display: none; }
+    .toc-wrapper.open { display: block; margin-bottom: 14px; }
+  }
+
+  /* print */
+  @media print {
+    .topbar, .toc-wrapper, .top-btn, .progress-bar { display: none !important; }
+    .layout { grid-template-columns: 1fr; padding: 0; }
+    .section { box-shadow: none; border: none; page-break-inside: avoid; padding: 12px 0; }
+    .hero { background: white; color: black; box-shadow: none; border: 1px solid #ddd; }
+    .hero h1, .hero-meta, .hero-revision { color: black; }
+    body { background: white; }
+  }
+
+  /* utility */
+  .quote {
+    border-left: 3px solid var(--text-mute);
+    padding: 4px 0 4px 14px;
+    margin: 12px 0;
+    color: var(--text-soft);
+    font-style: italic;
+    font-size: 14px;
+  }
+  .checklist { list-style: none; margin-left: 0 !important; }
+  .checklist li {
+    position: relative;
+    padding-left: 26px;
+    margin: 6px 0;
+  }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 7px;
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--text-mute);
+    border-radius: 3px;
+  }
+  .checklist li.done::before {
+    background: var(--success);
+    border-color: var(--success);
+  }
+  .checklist li.done::after {
+    content: "✓";
+    position: absolute;
+    left: 2px; top: 4px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .hr-soft {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 18px 0;
+  }
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progress"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">江</div>
+      <div>江苏高考备考计划<span class="brand-sub">物化生 · 修订版</span></div>
+    </div>
+    <div class="topbar-actions">
+      <button class="toc-toggle" id="tocToggle" aria-label="打开目录">📑 目录</button>
+      <button class="icon-btn" id="themeBtn" aria-label="切换主题" title="切换深色/浅色">🌓</button>
+      <button class="icon-btn" id="printBtn" aria-label="打印" title="打印 / 导出 PDF">🖨️</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="toc-wrapper" id="tocWrap">
+    <nav class="toc" aria-label="章节导航">
+      <div class="toc-title">目录 · TABLE OF CONTENTS</div>
+      <ul class="toc-list" id="tocList">
+        <li><a href="#sec-1">一、赋分制度说明</a></li>
+        <li><a href="#sec-2">二、各科目标分区间</a></li>
+        <li><a href="#sec-3">三、高二下学期</a></li>
+        <li><a href="#sec-4">四、暑假</a></li>
+        <li><a href="#sec-5">五、高三上学期</a></li>
+        <li><a href="#sec-6">六、高三下冲刺</a></li>
+        <li><a href="#sec-7">七、模考总体安排</a></li>
+        <li><a href="#sec-8">八、执行铁律</a></li>
+        <li><a href="#sec-9">九、干扰源管理</a></li>
+        <li><a href="#sec-10">十、身心状态管理</a></li>
+        <li><a href="#sec-11">十一、家长协同清单</a></li>
+        <li><a href="#sec-12">十二、强基计划与综合评价</a></li>
+        <li><a href="#sec-13">十三、优质资料与真题</a></li>
+        <li><a href="#sec-14">十四、九条易踩陷阱</a></li>
+        <li><a href="#sec-15">十五、模板合集</a></li>
+        <li><a href="#sec-16">十六、江苏专属赛道清单</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content" id="content">
+    <section class="hero">
+      <h1>江苏高考备考计划（物化生选科）· 修订版</h1>
+      <div class="hero-meta">
+        <span>高二在读</span>
+        <span>物理首选 + 化学 + 生物</span>
+        <span>目标 985 / 211</span>
+        <span>江苏 3+1+2 · 总分 750</span>
+      </div>
+      <div class="hero-revision">
+        <strong>修订重点：</strong>修正高考科目时间表 · 综评折算比例 · 教材版本 · 古诗文篇目 · 物理分值 · 学考赛道 · 体检与体测 · 志愿填报模式（"院校专业组"40 志愿）
+      </div>
+    </section>
+
+
+    <!-- ====== 一 ====== -->
+    <section class="section" id="sec-1">
+      <div class="section-head">
+        <span class="section-num">SEC 01</span>
+        <h2>赋分制度说明</h2>
+      </div>
+
+      <h3>总分结构</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>科目</th><th>满分</th><th>计分方式</th></tr></thead>
+          <tbody>
+            <tr><td>语文</td><td>150</td><td>原始分</td></tr>
+            <tr><td>数学</td><td>150</td><td>原始分</td></tr>
+            <tr><td>英语</td><td>150</td><td>原始分</td></tr>
+            <tr><td>物理（首选）</td><td>100</td><td><strong>原始分直接计入</strong></td></tr>
+            <tr><td>化学（再选）</td><td>100</td><td><strong>等级赋分</strong></td></tr>
+            <tr><td>生物（再选）</td><td>100</td><td><strong>等级赋分</strong></td></tr>
+            <tr><td><strong>合计</strong></td><td><strong>750</strong></td><td>语数英合计 <strong>450 分（占 60%）</strong>，物化生合计 <strong>300 分（占 40%）</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info">
+        <div class="callout-title">📝 修订说明</div>
+        原版写"语数英 420 分占 56%"是误算。150×3 = 450 分，占 60%。<strong>这意味着语数英的分值权重比想象中更高</strong>，不能单方面只盯物化生。
+      </div>
+
+      <h3>等级赋分规则（化学、生物）</h3>
+      <p>江苏 3+1+2 新高考（2021 年起施行）对再选科目采用 <strong>五等级比例赋分</strong>。原始分先按全省同选科考生的排名划入 A/B/C/D/E 五个等级，再在每个等级内按等比例线性转换。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>等级</th><th>全省排名比例</th><th>赋分区间</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>前 15%</td><td>100 – 86</td></tr>
+            <tr><td>B</td><td>15% – 50%</td><td>85 – 71</td></tr>
+            <tr><td>C</td><td>50% – 85%</td><td>70 – 56</td></tr>
+            <tr><td>D</td><td>85% – 98%</td><td>55 – 41</td></tr>
+            <tr><td>E</td><td>后 2%</td><td>40 – 30</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 关键认知 1</div>
+        化学生物的竞争对手是全省同选科考生，而非卷面本身。每次模考后看同校/全区排名，比只看原始分更有意义。
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 关键认知 2</div>
+        赋分最低 30 分，最高 100 分。<strong>每跨一个等级档收益极大</strong>——A 尾部（86）与 B 头部（85）赋分差 1 分，对应的却是 15% 与 50% 的实力位次差。卡在等级边界线上吃亏最大。
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 关键认知 3</div>
+        网上流传的"A+ 前 1%"是浙江/山东老规则，<strong>不适用于江苏</strong>。江苏只看 ABCDE 五级。
+      </div>
+      <div class="callout callout-success">
+        <div class="callout-title">✨ 关键认知 4 <span class="badge badge-new">新增</span></div>
+        A 档对应的化学/生物 <strong>原始分参考锚点</strong>——
+        <ul>
+          <li>化学 A 档（前 15%）原始分约 <strong>78-85</strong>（卷子难时下沉到 75）</li>
+          <li>生物 A 档（前 15%）原始分约 <strong>82-90</strong>（卷子难时下沉到 78）</li>
+          <li>两科同时低于这个区间 5 分以上 = 已经掉进 B 档，必须立即启动急救</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====== 二 ====== -->
+    <section class="section" id="sec-2">
+      <div class="section-head">
+        <span class="section-num">SEC 02</span>
+        <h2>各科目标分区间</h2>
+      </div>
+
+      <h3>985/211 录取分数参考线（江苏物理类近年）</h3>
+      <p class="quote">以下为 2023-2025 年江苏物理类录取线的经验区间，年份之间浮动 ±10 分属正常，以本年"一分一段表"为准。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>目标层次</th><th>总分参考</th><th>物理（原始）</th><th>化学（赋分）</th><th>生物（赋分）</th></tr></thead>
+          <tbody>
+            <tr><td>顶尖 985（清北复交浙科）</td><td>660+</td><td>92+</td><td>A 档稳定（前 5% 内）</td><td>A 档稳定（前 5% 内）</td></tr>
+            <tr><td>强 985（南大、东南、同济、哈工大、中山等）</td><td>620–650</td><td><strong>88+</strong> <span class="badge badge-revise">修订</span></td><td>A 档稳定（前 15%）</td><td>A 档稳定（前 15%）</td></tr>
+            <tr><td>一般 985 / 头部 211（苏大、南航、南理工等）</td><td>595–625</td><td>82+</td><td>A 档尾 或 B 档头（前 20%）</td><td>A 档尾 或 B 档头（前 20%）</td></tr>
+            <tr><td>主流 211（双一流学科院校）</td><td>570–600</td><td>75+</td><td>B 档（前 50%）内上游</td><td>B 档（前 50%）内上游</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info">
+        <div class="callout-title">📝 修订说明</div>
+        原版"强 985 物理 85+"偏低。从近 3 年实际录取数据看，强 985 物理类总分 620+ 对应的物理分一般在 88-92。82 分够 211，够不到强 985。
+      </div>
+
+      <h3>各科分项目标</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>科目</th><th>目标分区间</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>语文</td><td>118–130</td><td>作文 48+ 是关键突破口；130+ 是极少数</td></tr>
+            <tr><td>数学</td><td>120–<strong>135</strong> <span class="badge badge-revise">修订</span></td><td>压轴最后一问可战略放弃，前面必须无失误。135+ 已是省前 5%</td></tr>
+            <tr><td>英语</td><td>128–140</td><td>听力 28+/30；作文 31+（应用文 13+ + 读后续写 18+）</td></tr>
+            <tr><td>物理</td><td>82–95（原始）</td><td>不赋分，"护盘科目"；强 985 目标 88+</td></tr>
+            <tr><td>化学</td><td>A 档（赋分 86–100）</td><td>对应原始分约 78-85</td></tr>
+            <tr><td>生物</td><td>A 档（赋分 86–100）</td><td>对应原始分约 82-90</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-success">
+        <div class="callout-title">🎯 目标设置三条准则</div>
+        <ol>
+          <li><strong>先定下限再定上限。</strong>目标分不是"我希望考到"，而是"低于这个就够不到目标院校"。</li>
+          <li><strong>物化生掉档比语数英失分更致命。</strong>三门理科短板 1 档（B 档）直接让总分损失 15-30 分。</li>
+          <li><strong>"护盘科目"和"冲分科目"分开。</strong>物理、数学是护盘，必须稳定不掉档；英语是冲分。</li>
+        </ol>
+        <hr class="hr-soft">
+        <strong>选科优势确认：</strong>物化生在 2025 年江苏高校专业覆盖率约 <strong>96%-99%</strong>，3+1+2 模式下<strong>报考最广的选科</strong>，把精力全部用在提分上。
+      </div>
+    </section>
+
+
+    <!-- ====== 三 ====== -->
+    <section class="section" id="sec-3">
+      <div class="section-head">
+        <span class="section-num">SEC 03</span>
+        <h2>高二下学期（约 16 周）· 知识建构期</h2>
+      </div>
+
+      <div class="callout callout-danger">
+        <div class="callout-title">⚠️ 最优先确认事项 <span class="badge badge-new">修订新增</span></div>
+        在所有学科任务之前，先把这两件事核对清楚。任何一项没过，再优秀的备考都无效。
+        <ol>
+          <li><strong>学考状态自查</strong> — 物化生选科的学生，<strong>政、史、地三科必须通过合格性考试</strong>，否则无法毕业、无法上一本。今天就找班主任确认。</li>
+          <li><strong>学考"A 数"目标确认</strong> — 综评（尤其南大、东南）会把学考 A 等数量折算成综评总分的 5%。<strong>冲省内顶尖综评应规划政、史、地三科冲 A</strong>，6 个 A 是隐形门槛。</li>
+        </ol>
+      </div>
+
+      <h3>物化生侧重点</h3>
+      <div class="card-grid">
+        <div class="mini-card">
+          <h5>🔬 物理</h5>
+          <p>电磁感应、交流电、光学等高二下重点章节；建立"受力分析→方程→求解"标准解题流程；错题本每周整理。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧪 化学</h5>
+          <p>有机化学主干（对应选择性必修 3）：烃、卤代烃、醇醛酸酯转化关系；离子方程式零失误；强化选择题得分率。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧬 生物</h5>
+          <p>遗传与进化（对应必修 2）：减数分裂、基因遗传定律；图表题规范作答；背诵量分批消化。</p>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <div class="callout-title">📝 修订说明 · 教材版本</div>
+        2019 年起新课标教材结构变化——
+        <ul>
+          <li><strong>生物</strong>：必修 1（分子与细胞）+ 必修 2（遗传与进化）+ 选择性必修 1（稳态与调节）/ 2（生物与环境）/ 3（生物技术与工程）。<strong>没有"必修 3"和单独的"选修"</strong>。</li>
+          <li><strong>化学</strong>：必修 1、2 + 选择性必修 1（反应原理）/ 2（物质结构）/ 3（有机基础）。</li>
+          <li><strong>物理</strong>：必修 1、2、3 + 选择性必修 1/2/3。</li>
+        </ul>
+      </div>
+
+      <h3>语数英侧重点（450 分占 60%，权重高于物化生）</h3>
+      <h4>语文（目标 118-130）</h4>
+      <ul>
+        <li><strong>古诗文默写</strong>：<strong>新课标范围 = 高中 32 篇 + 初中 40 篇 = 72 篇</strong> <span class="badge badge-revise">修订</span>。每周 5 篇新背 + 1 次滚动默写</li>
+        <li><strong>文言文阅读</strong>：每周 3-5 篇教材外文本精读，积累"实词 120 个、虚词 18 个、句式 5 类"</li>
+        <li><strong>现代文阅读</strong>：小说+信息类每周各 1 套限时（30 分钟/篇）</li>
+        <li><strong>作文</strong>：每两周一篇 800 字交老师批改；每周积累 3 个素材</li>
+        <li><strong>失分雷区</strong>：语言文字运用每周一小练，最便宜的 8-10 分</li>
+      </ul>
+
+      <h4>数学（目标 120-135）</h4>
+      <ul>
+        <li><strong>基础题全对主义</strong>：单选 8 + 多选 4 + 填空 4 + 前 2 道大题 ≈ 100 分，模考这部分丢 ≤ 5 分</li>
+        <li><strong>三大失分区</strong>：导数（单调性+零点）、圆锥曲线（弦长+对称）、概率统计（分布列+期望）</li>
+        <li><strong>计算准确率</strong>：每天限时 5 道纯计算（10 分钟内），0 误差标准</li>
+        <li><strong>小题时间分配</strong>：单选 8 题 ≤ 12 分钟，多选 4 题 ≤ 10 分钟，填空 4 题 ≤ 12 分钟 <span class="badge badge-new">细化</span></li>
+        <li><strong>错题 30 题专项</strong>：本学期末整理"反复错的核心题"</li>
+      </ul>
+
+      <h4>英语(目标 128-140)</h4>
+      <ul>
+        <li><strong>词汇 3500</strong>：16 周一轮，每天 30 词 + 每周 180 词复测</li>
+        <li><strong>听力</strong>：每周 2 套真题，目标 28+/30</li>
+        <li><strong>阅读</strong>：每天 1 篇限时 8 分钟</li>
+        <li><strong>写作两块分开练</strong> <span class="badge badge-revise">修订</span>：应用文 15 分目标 13+；读后续写 25 分目标 18+</li>
+        <li><strong>长难句</strong>：每天 3 句翻译 + 结构拆解</li>
+      </ul>
+
+      <h3>每日时间分配（三种日模式）</h3>
+      <div class="quote">关键原则：不同日子不同强度，<strong>连续高强度必崩</strong>。</div>
+
+      <h4>工作日模板（周一至周五，约 5.5-6h 课外）</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时段</th><th>时长</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>早读 6:30-7:00</td><td>30 分钟</td><td>周一三五：英语词汇 / 周二四：语文古文</td></tr>
+            <tr><td>午休后</td><td>10 分钟</td><td>上午错题快速回顾（不做新题）</td></tr>
+            <tr><td>课后自习 17:00-19:00</td><td>2 小时</td><td>物理 1h + 化学/生物交替 1h</td></tr>
+            <tr><td>晚自习 19:30-22:00</td><td>2.5 小时</td><td>数学 1h + 语文/英语 1.5h（交替）</td></tr>
+            <tr><td>睡前</td><td>20 分钟</td><td>背单词 30 + 生物/化学记忆卡片</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 铁律</div>
+        晚上 22:30 前必须上床，高二下不熬夜，保护精力本金。
+      </div>
+
+      <h4>周末学习日模板（周六或周日选一天，8h）</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时段</th><th>时长</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>上午 8:30-11:30</td><td>3 小时</td><td>理科大块：物化生轮换 + 综合题</td></tr>
+            <tr><td>午休</td><td>1 小时</td><td>午睡 30 分钟 + 自由活动 30 分钟</td></tr>
+            <tr><td>下午 14:00-17:00</td><td>3 小时</td><td>语数英大块：每科 1 小时</td></tr>
+            <tr><td>晚上 19:00-21:00</td><td>2 小时</td><td>错题本整理 + 本周回顾 + 下周计划</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>休息日模板（周末另一天，必须留 ≤ 2h）</h4>
+      <div class="callout callout-success">
+        <strong>这一天彻底放空，不在书桌前度过。</strong>运动 + 家庭 + 爱好。<br>
+        早上 1h（早读+轻量任务）+ 晚上 30 分钟（次日预习）。<strong>休息日"偷"成学习日，第三周必崩盘。</strong>
+      </div>
+
+      <h3>重点题型与高频考点（江苏卷细粒度）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>科目</th><th>江苏卷高频题型</th><th>必须熟练的具体考点</th></tr></thead>
+          <tbody>
+            <tr><td>物理</td><td>带电粒子复合场运动、板块模型、传送带、双杆切割磁感线</td><td><strong>游标卡尺/螺旋测微器（在选择题，不在大题）</strong>、楞次定律、安培力做功、能量守恒、动量定理、圆周临界</td></tr>
+            <tr><td>化学</td><td>有机结构推断、离子共存、电化学、滴定曲线</td><td>同分异构数目、盐类水解、离子浓度守恒、电极反应式、官能团转化</td></tr>
+            <tr><td>生物</td><td>遗传系谱+基因定位、实验变量设计、光呼曲线、能量流动</td><td>伴性+自由组合联立、酶活性曲线、Na⁺/K⁺通道、生态位</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>模考与赋分监控启动</h3>
+      <ul>
+        <li><strong>频率</strong>：每月 1 次校内月考</li>
+        <li><strong>复盘</strong>：48 小时内按"知识漏洞/粗心/审题/方法"分类</li>
+        <li><strong>位次反推法</strong> <span class="badge badge-new">新增</span>：以本校上一届 985/211 录取人数倒推全省位次。例：本校去年 211 录取 50 人，本届 600 人 → 校排前 50 ≈ 全省 211 临界位次。比"假设系数 0.8-0.9"准得多。</li>
+        <li>连续两次跌出目标档一档以上，立即启动"学科急救"</li>
+      </ul>
+    </section>
+
+    <!-- ====== 四 ====== -->
+    <section class="section" id="sec-4">
+      <div class="section-head">
+        <span class="section-num">SEC 04</span>
+        <h2>暑假（约 7 周）· 系统一轮</h2>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 强度警告</div>
+        暑假不是"每天 10 小时"才有效。<strong>持续 7 周 8h/天的正向产出，远胜于前 2 周 10h/天后 5 周崩盘</strong>。
+      </div>
+
+      <h3>整体节奏（7 周分 3 段）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时间段</th><th>任务</th><th>强度</th></tr></thead>
+          <tbody>
+            <tr><td>第 1-3 周</td><td>物化生一轮：教材逐章过，整理思维导图，追覆盖率不追题量</td><td>默认档（8h）</td></tr>
+            <tr><td>第 4 周</td><td>语数英强化：数学压轴专题、英语写作范文、语文作文 2 天 1 篇</td><td>默认档（8h）</td></tr>
+            <tr><td>第 5-6 周</td><td>物化生专题突破 + 每周综合模拟卷 1 套（限时完整做）</td><td>默认档（8h）</td></tr>
+            <tr><td>第 7 周</td><td>过渡周：减量到 5-6h/天，从"暑假状态"切回"学校状态"</td><td>低档</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>每日时间分配（三档切换）</h3>
+      <h4>默认档 · 暑假学习日（约 8h，主力节奏）</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时段</th><th>时长</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>上午 8:30-12:00</td><td>3 小时</td><td>物理 1.5h + 化学 1.5h（含 30 分休息）</td></tr>
+            <tr><td>午休</td><td>1.5 小时</td><td>午饭 + 午睡 30-60 分钟</td></tr>
+            <tr><td>下午 14:00-17:00</td><td>2.5 小时</td><td>生物 1h + 数学 1.5h（含 30 分休息）</td></tr>
+            <tr><td>晚上 19:00-21:00</td><td>2 小时</td><td>语文 1h + 英语 1h</td></tr>
+            <tr><td>睡前</td><td>30 分钟</td><td>错题快速回顾 + 明日计划</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 铁律</div>
+        每天 <strong>≤ 8 小时纯学习</strong>，超过就是透支。想加量优先加周末深度模考。
+      </div>
+
+      <h4>冲刺档（约 10h，每周 1-2 天，慎用）</h4>
+      <p style="color:var(--text-soft);font-size:13.5px;">上午 3.5h 物化生专题 + 下午 3.5h 综合模拟卷+订正 + 晚上 2.5h 语数英+错题。<strong>连续冲刺档不超过 2 天</strong>。</p>
+
+      <h4>放假档（每周必留 1 天，≤ 2h）</h4>
+      <p style="color:var(--text-soft);font-size:13.5px;">彻底放空，运动 + 家庭 + 爱好。<strong>这一天不在书桌前度过</strong>。产出 0 道题也是合格。</p>
+
+      <h3>暑假重点专项（江苏卷本地化）</h3>
+      <div class="card-grid">
+        <div class="mini-card">
+          <h5>🔬 物理（原始分护盘）</h5>
+          <p>力学综合：板块、传送带、弹簧连接体；电磁场综合：复合场周期运动、双导轨切割；<strong>选择题专项</strong>：游标卡尺/螺旋测微器、打点计时器、伏安法误差。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧪 化学（赋分决胜）</h5>
+          <p>化工流程题（近 5 年江苏真题每道做+给分点批注）；滴定曲线判读 + pH 计算；电化学综合；同分异构限定条件下书写。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧬 生物（赋分决胜）</h5>
+          <p>遗传综合（伴性+自由组合+连锁）；调节综合（神经+体液+免疫，对应选必 1）；代谢图像（必修 1）；生态（选必 2）；实验探究四要素模板。</p>
+        </div>
+      </div>
+
+      <h3>语数英暑假专项</h3>
+      <ul>
+        <li><strong>语文</strong>：第 4 周 8 篇作文（议论文为主，限时 50 分钟）；古诗文 72 篇过一轮；现代文 15 个高频题型答题模板</li>
+        <li><strong>数学</strong>：每周 5 道真题压轴；整暑假"每日 10 道计算"本；立体几何 + 数列两小专题</li>
+        <li><strong>英语</strong>：词汇 3500 第二轮（中→英）；近 10 年阅读+七选五+完形泛刷；每天 1 套听力（80% 正确率）；应用文 10 模板 + 读后续写 20 句式</li>
+      </ul>
+
+      <h3>暑假模考安排</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时间</th><th>内容</th><th>复盘重点</th></tr></thead>
+          <tbody>
+            <tr><td>第 2 周末</td><td>语数外单科测试（语 150 + 数 120 + 外 120 分钟）</td><td>语文作文、数学压轴、英语完形失分点</td></tr>
+            <tr><td>第 4 周末</td><td>物化生全真模拟卷（每科 75 分钟）</td><td>计时 + 标注赋分边界题</td></tr>
+            <tr><td>第 6 周末</td><td>全科综合模拟（<strong>严格按高考时间段</strong>，详见第六章）</td><td>体力节奏 + 心理调适 + 赋分估算</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- ====== 五 ====== -->
+    <section class="section" id="sec-5">
+      <div class="section-head">
+        <span class="section-num">SEC 05</span>
+        <h2>高三上学期（约 20 周）· 二轮专题</h2>
+      </div>
+
+      <div class="callout callout-danger">
+        <div class="callout-title">⚠️ 高三上必办的 3 件行政大事 <span class="badge badge-new">修订新增</span></div>
+        漏一件就出局，时间窗口都不大。
+        <ol>
+          <li><strong>11 月初：高考报名</strong> — 江苏报名通常在 11 月上中旬，<strong>学生必须本人完成网上信息确认 + 现场材料提交</strong>。错过即无法参加高考。</li>
+          <li><strong>学考补考确认</strong> — 上学期未通过的政、史、地科目须在高三上补考通过，否则失去本科资格。</li>
+          <li><strong>强基/综评信息储备启动</strong> — 9-10 月家长开始整理目标 5-8 所高校近 3 年简章。</li>
+        </ol>
+      </div>
+
+      <h3>阶段节奏规划</h3>
+      <div class="timeline">
+        <div class="timeline-item alert">
+          <div class="timeline-month">9—10 月（一轮收尾）</div>
+          <div class="timeline-body">
+            <ul>
+              <li>对照考纲逐条清查，补足暑假漏洞</li>
+              <li>物理实验题强化，每周精做 1 题</li>
+              <li>语文文言文实词虚词系统梳理</li>
+              <li><strong>赋分监控</strong>：9 月校内模考必须做一次全省位次估算</li>
+              <li><strong>行政</strong>：10 月底前确认 11 月高考报名节点；学考补考报名</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">11—12 月（二轮专题）</div>
+          <div class="timeline-body">
+            <ul>
+              <li>物化生各拆出 4-5 个核心专题，专题内横向打通</li>
+              <li>数学综合大题限时训练，每周 4 道压轴题</li>
+              <li>英语写作每周 1 篇，积累高分句式</li>
+              <li>12 月开始关注目标院校上一年简章（新简章次年 3-4 月才发）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">1 月（查缺补漏）</div>
+          <div class="timeline-body">
+            <ul>
+              <li>回归错题本，针对性训练反复错的考点</li>
+              <li>英语完形填空专项；生物概念二次背诵</li>
+              <li><strong>1 月期末考是综评/强基初审的核心参考分</strong></li>
+              <li><strong>个人陈述初稿</strong> <span class="badge badge-key">关键</span>：寒假学生本人写（800-1500 字），<strong>家长不能代写</strong>——校测面试会按这份提问</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3>各科详细任务</h3>
+      <h4>物理（目标稳定 85+，冲 985 目标 88+）</h4>
+      <ul>
+        <li><strong>一轮全覆盖</strong>：力/电磁/热/光/近代物理（含选必 1/2/3）</li>
+        <li><strong>客观题专项</strong>：江苏物理客观题约 33 分（单选 7×3 + 多选 3×4），目标单选全对+多选不漏选</li>
+        <li><strong>实验题专项</strong>：江苏物理实验大题占 15-18 分，每周精做 1 题 + 1 道数据处理</li>
+        <li><strong>模型化</strong>：力学 10 大模型 + 电磁 6 大模型，看题 5 秒识别</li>
+      </ul>
+
+      <h4>化学（稳定 A 档，原始分稳定 80+）</h4>
+      <ul>
+        <li><strong>五大板块二轮</strong>：反应原理 / 无机推断 / 化工流程 / 有机合成 / 实验探究</li>
+        <li><strong>反应原理专题</strong>：平衡常数 Kc/Kp、转化率、电离常数、电化学——每周 3 道</li>
+        <li><strong>规范化训练</strong>：所有大题按高考阅卷给分点写</li>
+      </ul>
+      <div class="callout callout-danger">
+        <div class="callout-title">🚨 化学赋分边界 5 类高发失分 <span class="badge badge-new">新增</span></div>
+        <ol>
+          <li>化工流程产品纯度计算 / 副反应判断</li>
+          <li>同分异构体限定条件下漏写一种</li>
+          <li>电极反应式系数没配平 / 漏写 H₂O 或 OH⁻</li>
+          <li>实验题操作步骤描述不规范（缺"加入""充分""冷却"等关键动词）</li>
+          <li>离子方程式电荷守恒错位</li>
+        </ol>
+        每周对照自查，比泛说"规范书写"有用 10 倍。
+      </div>
+
+      <h4>生物（稳定 A 档，原始分稳定 84+）</h4>
+      <ul>
+        <li><strong>教材再读</strong>：必修 1、2 + 选必 1、2、3 逐字过一遍（11 月前完成）</li>
+        <li><strong>遗传专题</strong>：系谱、基因定位、伴性综合，每周 3-4 道</li>
+        <li><strong>实验探究规范化</strong>：四要素模板</li>
+      </ul>
+      <div class="callout callout-danger">
+        <div class="callout-title">🚨 生物赋分边界 4 类高发失分 <span class="badge badge-new">新增</span></div>
+        <ol>
+          <li>实验设计题"无关变量控制"漏写一项</li>
+          <li>遗传题概率没用分数表达 / 没注明分母含义</li>
+          <li>简答题用了"差不多""可能"等不确定语气</li>
+          <li>图像题横纵坐标没标单位</li>
+        </ol>
+      </div>
+
+      <h4>语数英目标</h4>
+      <ul>
+        <li><strong>语文 118+</strong>：每周 2 篇课外文言文精读；现代文小说+论述文+实用文每周各 1 套；作文每周 1 篇 + 老师反馈；古诗文 72 篇滚动默写</li>
+        <li><strong>数学 120+</strong>：圆锥曲线 + 导数双专题（10 周）；每周 4 道压轴；每天 10 道纯计算；小题限时（单选 ≤12min / 多选 ≤10min / 填空 ≤12min）</li>
+        <li><strong>英语 128+</strong>：3500 第三轮 + 高频词 500；每天 2 篇真题阅读 + 1 篇外刊；完形每周 3 篇精做；写作"应用文 13+ / 读后续写 18+"</li>
+      </ul>
+
+      <h3>每日时间分配（高三上）</h3>
+      <h4>工作日模板（约 6.5-7h 课外）</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时段</th><th>时长</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>早读 6:20-7:00</td><td>40 分钟</td><td>周一三五：英语词汇+长难句 / 周二四：语文古文+文言文</td></tr>
+            <tr><td>午休后</td><td>10 分钟</td><td>上午错题快速回顾</td></tr>
+            <tr><td>课后自习 17:00-19:00</td><td>2 小时</td><td>当日课程消化 0.5h + 物化生专题 1.5h</td></tr>
+            <tr><td>晚自习一段 19:30-21:00</td><td>1.5 小时</td><td>数学专题 1h + 英语/语文 0.5h</td></tr>
+            <tr><td>晚自习二段 21:10-22:30</td><td>1.5 小时</td><td>物化生轮换（按周排班）+ 错题本</td></tr>
+            <tr><td>睡前</td><td>20 分钟</td><td>背诵类（生物概念/化学方程式/单词）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 铁律</div>
+        高三上睡眠底线 6.5 小时。凌晨 1 点后的学习几乎全是负产出。
+      </div>
+
+      <h4>周末模板（学习日 9.5h + 休息日 ≤ 2h）</h4>
+      <p style="color:var(--text-soft);font-size:13.5px;">学习日：上午 3.5h 模拟卷（全真计时）+ 下午 4h 深度复盘（1.5 倍时长）+ 晚上 2h 计划弱项。<br>休息日：早 1h 早读 + 白天运动家庭 + 晚 1h 背诵明日计划。<strong>砍这一天的成本是整个下一周效率腰斩。</strong></p>
+
+      <h3>二轮核心专题清单</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>科目</th><th>专题</th><th>必练题型举例</th></tr></thead>
+          <tbody>
+            <tr><td>物理</td><td>力学综合 / 电场磁场 / 电磁感应+交流电 / 实验题 / 近代物理</td><td>板块+能量、复合场、双棒导轨、游标读数（选择题）、光电效应</td></tr>
+            <tr><td>化学</td><td>化工流程 / 电化学 / 有机合成 / 反应原理 / 实验探究</td><td>工艺图信息提取、电极反应式、限定同分异构、三大守恒、误差分析</td></tr>
+            <tr><td>生物</td><td>遗传变异 / 调节 / 代谢 / 生态 / 实验探究</td><td>系谱+基因定位、突触+激素、光呼曲线、数量金字塔、对照实验</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>高三上模考安排</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>频率</th><th>类型</th><th>核心目标</th></tr></thead>
+          <tbody>
+            <tr><td>每月第 2 周</td><td>校内月考</td><td>稳定发挥</td></tr>
+            <tr><td>每月第 4 周</td><td>自选真题卷（近 3 年江苏卷）</td><td>感受真题难度曲线</td></tr>
+            <tr><td>11、12 月各 1 次</td><td>联考/全科模拟</td><td>赋分等级估算，决定下阶段复习侧重</td></tr>
+            <tr><td>1 月</td><td>期末定位考</td><td><strong>综评 + 强基初审的关键参考分</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====== 六 ====== -->
+    <section class="section" id="sec-6">
+      <div class="section-head">
+        <span class="section-num">SEC 06</span>
+        <h2>高三下冲刺（约 16 周）· 三轮强化</h2>
+      </div>
+
+      <div class="callout callout-danger">
+        <div class="callout-title">⚠️ 高三下必办的 4 件行政大事 <span class="badge badge-new">修订新增</span></div>
+        <ol>
+          <li><strong>3-4 月：高考体检</strong> — 色弱、视力、身高会限制部分专业（医学、军事、航空、海运）。体检结果出来后必须在志愿填报前重新核对每个目标专业组。</li>
+          <li><strong>3 月底：强基简章发布 + 4 月报名</strong> — 报名窗口仅 4 月中下旬约 10 天，错过即出局。</li>
+          <li><strong>4 月中-5 月初：综评报名</strong> — 江苏省内综评高校集中报名。</li>
+          <li><strong>5 月中下旬：强基/综评初审结果</strong> — 通过者准备校测，未通过者专心高考。</li>
+        </ol>
+      </div>
+
+      <h3>江苏高考真实时间表 <span class="badge badge-key">必须背熟</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>日期</th><th>上午</th><th>下午</th></tr></thead>
+          <tbody>
+            <tr><td><strong>6 月 7 日</strong></td><td>语文 9:00–11:30（150 分钟）</td><td>数学 15:00–17:00（120 分钟）</td></tr>
+            <tr><td><strong>6 月 8 日</strong></td><td><strong>物理 9:00–10:15（75 分钟）</strong></td><td>外语 15:00–17:00（120 分钟，含听力）</td></tr>
+            <tr><td><strong>6 月 9 日</strong></td><td><strong>化学 8:30–9:45</strong> / 地理 11:00–12:15</td><td>思想政治 14:30–15:45 / <strong>生物 17:00–18:15</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info">
+        <div class="callout-title">📝 修订说明</div>
+        原版把物理放到 6/9 上午、化学放到 6/9 下午、生物放到 16:30 起，<strong>全错</strong>。冲刺期周末模拟卷必须严格按此真实时间排。考前 2 周作息训练也按此表。
+      </div>
+
+      <h3>冲刺节奏三阶段</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-month">2—3 月（三轮强化，约 7 周）</div>
+          <div class="timeline-body">
+            <ul>
+              <li>回归教材与考纲，物理客观题确保不失分</li>
+              <li>化学生物用近 5 年真题找命题规律</li>
+              <li><strong>个人陈述定稿</strong>（基于寒假初稿润色，反复改 3 版）</li>
+              <li><strong>行政：3-4 月配合学校完成高考体检</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item alert">
+          <div class="timeline-month">4—5 月上旬（高强度模考期，约 6 周）</div>
+          <div class="timeline-body">
+            <ul>
+              <li>每周完整全科模拟 1 套，<strong>严格按高考时间计时</strong></li>
+              <li>模考当日复盘，次日晨订正</li>
+              <li><strong>强基报名</strong>：4 月中下旬 10 天窗口，家长操作</li>
+              <li><strong>综评报名</strong>：4 月中下旬-5 月初</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">考前 2 周（稳定状态期）</div>
+          <div class="timeline-body">
+            <ul>
+              <li>停止接触新知识，只刷错题本</li>
+              <li><strong>作息完全对齐高考时间表</strong></li>
+              <li>心理减压优先，睡眠 ≥ 7.5 小时</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3>各科冲刺专项</h3>
+      <div class="card-grid">
+        <div class="mini-card">
+          <h5>🔬 物理（目标 ≥ 88）</h5>
+          <p>客观题零失误（每周 2 套 30 分钟）；近 10 年实验题刷 2 遍；力电综合/双棒/复合场压轴模板化；5 月最后两周只做错题本。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧪 化学（稳 A）</h5>
+          <p>化工流程 5 年真题做 2 遍；建立"官能团转化网络图"；规范书写每日 10 分钟；每周 2 次 75 分钟单科模拟（对齐 8:30-9:45）。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧬 生物（稳 A）</h5>
+          <p>遗传综合每天 1 道；实验四要素模板；教材原话回炉；每周 2 次 75 分钟单科模拟（对齐 17:00-18:15，重点）。</p>
+        </div>
+        <div class="mini-card">
+          <h5>📝 语文（118+ 冲 125）</h5>
+          <p>作文每周 1 篇 + 素材 3 个不停；古诗文 72 篇每天 10 句；现代文答题模板错例本；语文文运每周 1 套。</p>
+        </div>
+        <div class="mini-card">
+          <h5>📐 数学（120+ 冲 130）</h5>
+          <p>小题每周 3 套限时 30 分钟；圆锥曲线+导数每周各 2 道；每周 1 套完整模拟卷；每天 5 道计算到考前。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🌐 英语（128+ 冲 135）</h5>
+          <p>听力每周 3 套（28+/30）；阅读+七选五每天 1 套；完形每周 2 篇；作文应用文 13+ + 读后续写 18+。</p>
+        </div>
+      </div>
+
+      <h3>周末全真模拟（严格按 6/7-6/9 时段）<span class="badge badge-key">关键</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>日期/时段</th><th>内容</th><th>对应高考</th></tr></thead>
+          <tbody>
+            <tr><td>周六 9:00-11:30</td><td>语文模拟 150 分钟</td><td>6/7 上午</td></tr>
+            <tr><td>周六 15:00-17:00</td><td>数学模拟 120 分钟</td><td>6/7 下午</td></tr>
+            <tr><td>周日 9:00-10:15</td><td><strong>物理模拟 75 分钟</strong></td><td>6/8 上午</td></tr>
+            <tr><td>周日 15:00-17:00</td><td>外语模拟 120 分钟</td><td>6/8 下午</td></tr>
+            <tr><td>另选时段 8:30-9:45</td><td><strong>化学模拟 75 分钟</strong></td><td>6/9 上午</td></tr>
+            <tr><td>另选时段 17:00-18:15</td><td><strong>生物模拟 75 分钟</strong></td><td>6/9 傍晚</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <strong>生物 17:00 时段尤其要练</strong>——这个时段身体疲劳、注意力涣散，是大多数考生的失分区。
+      </div>
+
+      <h3>考前 2 周特殊模板</h3>
+      <p style="color:var(--text-soft);font-size:13.5px;">早读 30 分钟（只背熟悉内容）→ 上午 9:00-11:30 按高考上午科目 → 午休 1.5h（必须睡）→ 下午 15:00-17:00 按高考下午科目 → 晚上 17:00-18:15 重点训练 6/9 生物时段 → 晚 19:30-21:00 错题本 → 睡前 30 分钟简单复习。</p>
+      <div class="callout callout-success">
+        <strong>考前 3 天：</strong>只做熟题、整理心态、准备文具，<strong>不做新卷子</strong>。
+      </div>
+    </section>
+
+
+    <!-- ====== 七 ====== -->
+    <section class="section" id="sec-7">
+      <div class="section-head">
+        <span class="section-num">SEC 07</span>
+        <h2>模考总体安排</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>阶段</th><th>频率</th><th>类型</th><th>核心用途</th></tr></thead>
+          <tbody>
+            <tr><td>高二下</td><td>每月 1 次</td><td>校内月考</td><td>找知识漏洞</td></tr>
+            <tr><td>暑假</td><td>每 2 周 1 次</td><td>真题/模拟卷</td><td>建立全科节奏感</td></tr>
+            <tr><td>高三上</td><td>每月 2 次</td><td>月考+真题</td><td>二轮专题效果检验</td></tr>
+            <tr><td>高三下（2-3 月）</td><td>每 2 周 1 次</td><td>全科模拟</td><td>三轮强化验收</td></tr>
+            <tr><td>高三下（4-5 月）</td><td>每周 1 套</td><td><strong>全真高考模拟（严格按 6/7-6/9 时段）</strong></td><td>冲刺状态维持</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-success">
+        <div class="callout-title">⏱️ 复盘黄金比例</div>
+        复盘时间不少于做题时间的 <strong>1.5 倍</strong>。做了 150 分钟的卷子，至少花 225 分钟复盘。
+      </div>
+    </section>
+
+    <!-- ====== 八 ====== -->
+    <section class="section" id="sec-8">
+      <div class="section-head">
+        <span class="section-num">SEC 08</span>
+        <h2>执行铁律</h2>
+      </div>
+
+      <h3>错题本管理</h3>
+      <ul>
+        <li><strong>分类记录</strong>：知识漏洞 / 粗心失误 / 审题错误 / 方法不会 四类分开</li>
+        <li><strong>每错必析</strong>：注明"哪个环节断了"，不只是抄题目</li>
+        <li><strong>定期回刷</strong>：每两周翻阅一次，确认是否真正掌握</li>
+      </ul>
+
+      <h3>节奏纪律</h3>
+      <ol>
+        <li><strong>模考复盘时间 ≥ 做题时间的 1.5 倍</strong></li>
+        <li><strong>高三下 4 月后严禁开新专题</strong>，只在已知错误上精细打磨</li>
+        <li><strong>考前两周停止刷新题</strong>，只用错题本和熟悉题型维持手感</li>
+      </ol>
+
+      <h3>赋分科目策略</h3>
+      <ul>
+        <li>化学生物不以"原始分高低"为目标，以"超越竞争对手的比例"为目标</li>
+        <li>高频拿分点（化工流程、遗传计算）必须稳定拿满</li>
+        <li>压轴题即便不能完整，也要写出解题思路争取步骤分</li>
+        <li>规范书写是赋分边界的隐形决定因素</li>
+      </ul>
+
+      <h3>赋分监控动作（每次模考后必须执行）</h3>
+      <h4>Step 1 · 采集数据（24 小时内）</h4>
+      <ul class="checklist">
+        <li>化学/生物原始分</li>
+        <li>化学/生物班级排名 + 同校年级排名</li>
+        <li>本校化学/生物选科总人数</li>
+      </ul>
+
+      <h4>Step 2 · 估算等级（用三种参照）<span class="badge badge-revise">修订增强</span></h4>
+      <ul>
+        <li><strong>位次反推法（首选，最准）</strong>：本校上一届 985/211 录取人数 → 倒推全省位次。例：本校去年 211 录取 50 人，本届 600 人 → 校排前 50 ≈ 全省 211 临界位次。</li>
+        <li><strong>同校估算法</strong>：年级排名百分位 × 0.8-0.9 ≈ 全省百分位（粗略校对）</li>
+        <li><strong>联考估算法</strong>：参加市级或省级联考后，组织方通常会给出全省大致位次</li>
+      </ul>
+
+      <h4>Step 3 · 判断档位与行动</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>当前估算等级</th><th>目标等级</th><th>行动</th></tr></thead>
+          <tbody>
+            <tr><td>稳定 A 档（前 15%）</td><td>A 档</td><td>维持节奏，按原计划</td></tr>
+            <tr><td>A 档边界（前 13%-17% 游走）</td><td>A 档</td><td><strong>高危信号</strong>：消灭选择题失分 + 规范书写专项 + 增加 20% 时间</td></tr>
+            <tr><td>B 档（15%-50%）</td><td>A 档</td><td><strong>急救启动</strong>：该科时间从 1/3 加到 1/2，持续 4 周后再评估</td></tr>
+            <tr><td>B 档后半 / C 档</td><td>A 档</td><td>重新评估目标；可能需要专项辅导</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>Step 4 · 每两个月做一次趋势判断</h4>
+      <ul>
+        <li>画"月度排名折线图"，把每月化学/生物的百分位点连起来</li>
+        <li><strong>向上 3 连</strong>：可以小幅减少该科时间</li>
+        <li><strong>横盘 3 连</strong>：节奏正常，不调整</li>
+        <li><strong>向下 2 连</strong>：立即排查原因并启动急救</li>
+      </ul>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 重要提醒</div>
+        江苏赋分是"比排名"，<strong>不是"比原始分差距"</strong>。原始分从 85 提到 90 看起来 5 分，但同档对手也提了，你的排名不动，赋分不会涨。<strong>看的是排名百分位变化，不是分数本身</strong>。
+      </div>
+
+      <h3>物理"护盘"策略 <span class="badge badge-revise">修订</span></h3>
+      <ul>
+        <li>选择题约 33 分（单选 7×3 + 多选 3×4），目标：<strong>单选全对 21 分 + 多选不漏选 12 分</strong></li>
+        <li>大题前两道（基础实验 + 基础力学/电学）：<strong>必须完整写出</strong>，70 分基本盘</li>
+        <li>最难压轴题：<strong>拿过程分即可</strong>，不纠结最终结果</li>
+        <li>物理是原始分，无缓冲空间，长期低于 85 分（强 985 目标 88+）就要重新评估</li>
+      </ul>
+    </section>
+
+    <!-- ====== 九 ====== -->
+    <section class="section" id="sec-9">
+      <div class="section-head">
+        <span class="section-num">SEC 09</span>
+        <h2>干扰源管理（高中生的隐形杀手）</h2>
+      </div>
+
+      <h3>手机与电子设备</h3>
+      <ul>
+        <li><strong>学习日原则</strong>：手机集中放客厅/统一保管箱，只在早晚各 15 分钟查看，全程静音</li>
+        <li><strong>短视频禁区</strong>：抖音/B 站/快手单日累计 ≤ 30 分钟，周末放宽到 60 分钟</li>
+        <li><strong>学习软件例外</strong>：背单词/听力/错题 App 独立开启飞行模式</li>
+        <li><strong>宿舍规则</strong>（住校者）：晚自习后手机交保管，周末集中使用</li>
+      </ul>
+
+      <h3>时间黑洞排查（每周日自查）</h3>
+      <ul class="checklist">
+        <li>本周非学习娱乐时间是否 ≤ 6 小时？</li>
+        <li>本周有没有"学了一下午但产出为零"的时段？</li>
+        <li>本周有没有因为手机/聊天耽误了计划内任务？</li>
+      </ul>
+
+      <h3>同伴与环境</h3>
+      <ul>
+        <li>学习对子选 1 个（互相督促进度、交换错题），不要 5 人学习群</li>
+        <li>答疑优先找老师，其次是成绩稳定超过你的同学</li>
+        <li>家庭氛围需要家长配合：学习日不在家里聚会/看电视/大声视频通话</li>
+      </ul>
+    </section>
+
+    <!-- ====== 十 ====== -->
+    <section class="section" id="sec-10">
+      <div class="section-head">
+        <span class="section-num">SEC 10</span>
+        <h2>身心状态管理</h2>
+      </div>
+
+      <h3>睡眠铁律</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>阶段</th><th>建议睡眠</th><th>底线</th></tr></thead>
+          <tbody>
+            <tr><td>高二下</td><td>7.5 小时</td><td>≥ 7 小时</td></tr>
+            <tr><td>暑假</td><td>8 小时</td><td>≥ 7.5 小时</td></tr>
+            <tr><td>高三上</td><td>7 小时</td><td>≥ 6.5 小时</td></tr>
+            <tr><td>高三下冲刺</td><td>7 小时</td><td>≥ 6.5 小时</td></tr>
+            <tr><td>考前 2 周</td><td>7.5 小时</td><td><strong>严禁熬夜</strong>，对齐高考时间</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="quote">熬夜到 1 点换来的 3 小时学习，第二天损失的是 6 小时的效率。<strong>高三拼的不是时长，是日内有效小时数</strong>。</div>
+
+      <h3>运动与视力</h3>
+      <ul>
+        <li>每周 ≥ 3 次、每次 30 分钟中等强度运动</li>
+        <li><strong>强基体测专项</strong> <span class="badge badge-new">新增</span>：高三上 9 月起每周 1 次 50 米冲刺 + 男生引体向上/女生仰卧起坐 + 立定跳远 + 坐位体前屈。<strong>强基校测体测不达标直接不录取</strong></li>
+        <li>课间 10 分钟必须远眺窗外 2-3 分钟</li>
+        <li>视力下降会直接影响看卷速度，及时配镜</li>
+      </ul>
+
+      <h3>饮食与精力</h3>
+      <ul>
+        <li>早餐必吃蛋白质（鸡蛋/牛奶），不吃或只吃碳水会导致上午 10 点崩盘</li>
+        <li>中午 20-30 分钟午休，可以不睡但必须闭眼</li>
+        <li>考试当天忌浓茶/咖啡过量，肠胃敏感者考前一周不吃外卖</li>
+      </ul>
+
+      <h3>情绪与心理</h3>
+      <ul>
+        <li>每次模考后允许失落 1 天，第 2 天必须回到做题状态</li>
+        <li>连续 3 天无法进入学习状态，主动找班主任或心理老师</li>
+        <li>考前焦虑是正常的，"焦虑就焦虑着做题"</li>
+        <li>提前和家长沟通边界，避免否定性评价</li>
+      </ul>
+
+      <h3>按备考阶段调档</h3>
+      <div class="card-grid">
+        <div class="mini-card">
+          <h5>🌱 高二下 · 打地基期</h5>
+          <p>睡眠 7.5h 底线不破。建立每周 3 次运动习惯，把运动绑死时段。情绪管理脚本训练。</p>
+        </div>
+        <div class="mini-card">
+          <h5>☀️ 暑假 · 持久力建设期</h5>
+          <p>强制工作日同作息（7:00 起 / 22:30 睡）。每周休息日比学习日重要。看到"别人努力我在浪"信号就运动 30 分钟。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🍂 高三上 · 长线作战期</h5>
+          <p>月底状态自评：睡眠 ≥ 6.5h？运动 ≥ 8 次？提不起劲超过 3 天？任一连续两月红灯就调整。11-12 月+1 月波峰提前打预防针。</p>
+        </div>
+        <div class="mini-card">
+          <h5>🌸 高三下 · 精力管理期</h5>
+          <p>睡眠底线 7h，考前 2 周 7.5h。每周必须留半天彻底放空（不在书桌前）。午休不能省。<strong>考前 1 周不看模考成绩，不刷高考加油内容。</strong></p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 十一 ====== -->
+    <section class="section" id="sec-11">
+      <div class="section-head">
+        <span class="section-num">SEC 11</span>
+        <h2>家长协同清单</h2>
+      </div>
+
+      <h3>信息搜集（家长主战场）</h3>
+      <ul>
+        <li>每月看一次江苏省教育考试院官网 <code>jseea.cn</code></li>
+        <li>每年 4-5 月通读"目标院校近 3 年的一分一段表和录取线"，做成 Excel</li>
+        <li>加入 1-2 个靠谱家长群（避免信息焦虑群），信息以官方为准</li>
+        <li>高三上学期开始研究强基/综评/专项计划等升学路径</li>
+      </ul>
+
+      <h3>江苏志愿填报准备 <span class="badge badge-revise">修订重点</span></h3>
+      <div class="callout callout-info">
+        <div class="callout-title">📝 修订说明</div>
+        江苏物理类本科批是"院校专业组"模式，本科批可填 <strong>40 个志愿</strong>，每个志愿是一个院校专业组（组内最多 6 个专业 + 是否服从调剂）。<strong>填报单位是"院校专业组"，不是"院校"</strong>。
+      </div>
+      <ul>
+        <li>4-5 月研究《江苏省普通高校招生计划》纸质本</li>
+        <li>列出 <strong>40-60 个候选院校专业组</strong>，包含：
+          <ul>
+            <li>院校专业组代码</li>
+            <li>该组的选科要求（必须包含物化生匹配的）</li>
+            <li>该组里包含哪些专业</li>
+            <li>近 3 年最低录取分 + 录取位次</li>
+          </ul>
+        </li>
+        <li><strong>冲稳保梯度</strong>：40 个志愿大致分成 冲 10 + 稳 20 + 保 10，分差至少 15 分</li>
+        <li><strong>服从调剂</strong>：保底志愿组必须勾"服从调剂"，否则掉档</li>
+        <li><strong>专业受限核对</strong>：体检结果出来后逐个核对色觉/视力/身高限制</li>
+        <li>高考出分后 3 天内完成志愿初稿，留 7 天给调整</li>
+      </ul>
+
+      <h3>后勤保障</h3>
+      <ul>
+        <li>不讨论和学习无关的负面消息（亲戚攀比、工作烦恼）</li>
+        <li>备考期间饮食节奏稳定，考前一周严格防腹泻</li>
+        <li>学习用品保持 2 周存量</li>
+        <li>考点探访、文具准备、准考证打印提前 7 天完成</li>
+      </ul>
+
+      <h3>父母不做的事</h3>
+      <ul>
+        <li><strong>不陪读在书桌旁监督</strong></li>
+        <li><strong>不把模考一次发挥当定局</strong>（江苏卷波动 20 分很正常）</li>
+        <li><strong>不以自己的经验指导学科方法</strong></li>
+        <li><strong>不把备考变成家庭氛围的唯一话题</strong></li>
+        <li><strong>不代写综评/强基个人陈述</strong> <span class="badge badge-revise">修订</span> ——会在面试时露馅</li>
+      </ul>
+    </section>
+
+    <!-- ====== 十二 ====== -->
+    <section class="section" id="sec-12">
+      <div class="section-head">
+        <span class="section-num">SEC 12</span>
+        <h2>强基计划与综合评价时间轴</h2>
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>为什么必须了解</strong>：江苏物化生 985 学生<strong>绝大多数走强基计划或综合评价</strong>。这两条路径年初就启动，只盯着 6 月高考会错过关键窗口。
+      </div>
+
+      <h3>两条路径对比 <span class="badge badge-revise">修订重点</span></h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>维度</th><th>强基计划</th><th>综合评价（综评）</th></tr></thead>
+          <tbody>
+            <tr><td>院校范围</td><td>39 所 C9+首批双一流为主</td><td>江苏省内为主（南大、东南、南航、南理工、河海、南师、南农等）+ 部分省外</td></tr>
+            <tr><td>专业方向</td><td><strong>基础学科</strong>，本硕博贯通</td><td>各校自主设专业组，含热门工科商科</td></tr>
+            <tr><td>考试形式</td><td>高考分 + 校考笔试 + 面试 + 体测</td><td>高考分 + 校测（笔面试），部分含体测</td></tr>
+            <tr><td>分数折算</td><td colspan="2"><strong>高考 85% + 校考 15%</strong>（修订：原版"60-70%+30-40%"是浙江/上海口径，<strong>江苏几乎清一色 85+15</strong>；南大综评是高考 85% + 校测 10% + 学考 5%）</td></tr>
+            <tr><td>录取优惠</td><td>名校强基入围实际让分约 <strong>5-15 分</strong>（修订：原版"10-30 分"是个别冷门专业）</td><td>折算后让分约 10-20 分</td></tr>
+            <tr><td>适合对象</td><td>真心喜欢基础学科、能接受本硕博 8 年</td><td>分数接近裸考线、综合能力强、需要 10-20 分助攻</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info">
+        <strong>修订核心</strong>：江苏综评的真实价值是"在裸分接近线时，靠 10-15% 的校测多换 10-20 分进档"，<strong>不是"靠校测翻盘"</strong>。预期 30 分让分会导致 5 月精力错配。
+      </div>
+
+      <h3>江苏综评的"学考 A 数"加分 <span class="badge badge-new">新增 · 隐形赛道</span></h3>
+      <p>南大、东南、南师等部分高校综评公式包含"学考 A 等数量"折算分（一般占 5%）。物化生选科的学生：</p>
+      <ul>
+        <li>政、史、地三科必须通过合格考（基本盘）</li>
+        <li>冲省内顶尖综评：<strong>政、史、地三科冲 A 等</strong>（合计 6 个 A 是隐形门槛）</li>
+        <li>高二期间就要把"学考冲 A"纳入复习清单，考完后悔来不及</li>
+      </ul>
+
+      <h3>高三全年时间轴（按月）</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-month">9-10 月（信息准备期）</div>
+          <div class="timeline-body">家长整理目标 5-8 所高校近 3 年简章；学生不分心全力二轮，周末抽 30 分钟听家长简报。<strong>10 月底确认 11 月初高考报名节点。</strong></div>
+        </div>
+        <div class="timeline-item alert">
+          <div class="timeline-month">11 月（行政关键月）<span class="badge badge-key">高危</span></div>
+          <div class="timeline-body">
+            <ul>
+              <li><strong>11 月初：高考报名</strong>（学生本人确认，错过出局）</li>
+              <li>11 月月考后家长做"综评模拟分数"估算（高考估分 × 0.85 + 校测估分 × 0.15）</li>
+              <li>学考补考报名（如有未通过科目）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">12 月（初步定位期）</div>
+          <div class="timeline-body">家长比对本校近年被强基/综评录取的学长案例；12 月校外联考是综评/强基初审的关键参考分。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">1 月（策略确定期）</div>
+          <div class="timeline-body">期末考出分后确定主攻路径；<strong>寒假学生本人写个人陈述初稿（800-1500 字）</strong>；强基意向者每周 2 小时学科竞赛初级题。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">2-3 月（简章发布期）</div>
+          <div class="timeline-body">强基简章 3 月底前陆续发布；综评简章 3-4 月。学生每周 20 分钟读一篇目标校简章。<strong>3-4 月配合学校完成高考体检</strong>。</div>
+        </div>
+        <div class="timeline-item alert">
+          <div class="timeline-month">4 月（报名高峰 · 最关键月）<span class="badge badge-key">高危</span></div>
+          <div class="timeline-body">
+            <ul>
+              <li><strong>强基报名</strong>：4 月中下旬约 10 天窗口，错过就没了</li>
+              <li><strong>综评报名</strong>：4 月中下旬-5 月初</li>
+              <li>家长填表上传材料，学生只负责确认</li>
+              <li>材料：学籍信息、综评档案、获奖证书、个人陈述</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">5 月（等待初审期）</div>
+          <div class="timeline-body">高考最后冲刺；5 月中下旬初审结果发布。<strong>注意强基与综评校测时间可能撞档</strong>，提前确认目标组合。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">6 月 7-9 日（高考）</div>
+          <div class="timeline-body">正常应考。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-month">6 月中-7 月初（校测期）</div>
+          <div class="timeline-body">强基校测多在出分前后；综评校测集中在 6 月下旬-7 月初。<strong>面试时会问个人陈述里的内容</strong>——代笔的学生现场会露馅。</div>
+        </div>
+      </div>
+
+      <h3>高二下就该做的 4 件事 <span class="badge badge-revise">修订</span></h3>
+      <ol>
+        <li><strong>建立成绩档案</strong>：每次重大考试成绩保留纸质扫描件</li>
+        <li><strong>争取综合素质评价亮点</strong>：研究性学习报告 1 份、学科竞赛 1 次（省级即可）、志愿服务 40 小时</li>
+        <li><strong>学考冲 A</strong>：政、史、地三科为综评做准备</li>
+        <li><strong>家长学基础</strong>：家长读完 1 本强基/综评指南</li>
+      </ol>
+
+      <h3>三条判断原则 <span class="badge badge-revise">修订</span></h3>
+      <ol>
+        <li><strong>综评优先度高于强基</strong>（对大多数江苏考生）。综评让分更大，专业选择更灵活</li>
+        <li><strong>强基要看真实兴趣</strong>。不是"考不上裸考就去强基"的补偿路径——进去后转专业难度大</li>
+        <li><strong>不要同时准备 5 个学校</strong>。<strong>最优组合：1 所强基 + 2 所综评，且校测时间不冲突</strong></li>
+      </ol>
+
+      <div class="callout callout-warn">
+        <div class="callout-title">⚠️ 风险提醒</div>
+        强基/综评每年政策微调。实际操作以当年教育部和目标校官方简章为准。<strong>不要听中介讲故事</strong>，永远以官方文件为准。
+      </div>
+    </section>
+
+    <!-- ====== 十三 ====== -->
+    <section class="section" id="sec-13">
+      <div class="section-head">
+        <span class="section-num">SEC 13</span>
+        <h2>优质资料与真题清单</h2>
+      </div>
+
+      <h3>真题</h3>
+      <ul>
+        <li><strong>江苏卷 2021-2025 五年真题</strong>：高三上开始接触，第一次做不要看答案</li>
+        <li><strong>全国新高考Ⅰ卷近 3 年真题</strong>：山东、湖北、湖南，难度同档</li>
+        <li><strong>2020 年及以前江苏老高考卷</strong>：风格不同，只挑具体知识点的题</li>
+      </ul>
+
+      <h3>分科资料</h3>
+      <div class="card-grid">
+        <div class="mini-card">
+          <h5>🧪 化学（赋分 · 规范最重要）</h5>
+          <p><strong>一轮</strong>：五年高考三年模拟 A 版<br><strong>二轮</strong>：教材（必修 1、2 + 选必 1、2、3）+ 考纲，配合化工流程题专练<br><strong>冲刺</strong>：近 3 年江苏化学卷，对照阅卷给分点</p>
+        </div>
+        <div class="mini-card">
+          <h5>🔬 物理（原始分 · 熟练度最重要）</h5>
+          <p><strong>一轮</strong>：高中物理一本涂书 + 五三<br><strong>二轮</strong>：选 1 本系统讲解教辅<br><strong>实验题</strong>：江苏近 10 年实验题汇编</p>
+        </div>
+        <div class="mini-card">
+          <h5>🧬 生物（赋分 · 规范+背诵）</h5>
+          <p><strong>一轮</strong>：教材逐字过 + 五三<br><strong>二轮</strong>：近 5 年新高考生物真题汇编<br><strong>背诵</strong>：核心概念卡片</p>
+        </div>
+        <div class="mini-card">
+          <h5>📐 数学</h5>
+          <p>高考必刷题（分专题版）</p>
+        </div>
+        <div class="mini-card">
+          <h5>📝 语文</h5>
+          <p>作文素材本自制；<strong>不要盲刷高考满分作文合集</strong>，会写成八股</p>
+        </div>
+        <div class="mini-card">
+          <h5>🌐 英语</h5>
+          <p>高考词汇 3500 + 历年真题听力（反复泛听再精听）</p>
+        </div>
+      </div>
+
+      <h3>工具类</h3>
+      <ul>
+        <li><strong>错题本</strong>：康奈尔笔记本 或 活页本</li>
+        <li><strong>计时器</strong>：番茄钟 App 或实体计时器</li>
+        <li><strong>答疑</strong>：优先找老师，次选小猿搜题，<strong>不要</strong>直接用 AI 抄答案</li>
+      </ul>
+    </section>
+
+    <!-- ====== 十四 ====== -->
+    <section class="section" id="sec-14">
+      <div class="section-head">
+        <span class="section-num">SEC 14</span>
+        <h2>九条易踩陷阱（反面清单）</h2>
+      </div>
+
+      <ol>
+        <li><strong>只刷题不复盘</strong>：做 50 道+复盘 20 道 远超 做 100 道+不复盘</li>
+        <li><strong>收藏癖</strong>：整理 200 页错题本从不回看，等于没整理</li>
+        <li><strong>用战术勤奋逃避战略懒惰</strong>：熬夜 2 小时的本质常是白天无效</li>
+        <li><strong>化学生物只盯原始分</strong>：忘了赋分，比对手强 1 档就赢 15 分</li>
+        <li><strong>数学压轴死磕</strong>：20 分钟拿不下就战略放弃</li>
+        <li><strong>高三下还开新专题</strong>：4 月后只允许在错题范围内精细化</li>
+        <li><strong>模考崩盘后一蹶不振</strong>：江苏卷波动 30 分属正常</li>
+        <li><strong>信息焦虑型学习</strong>：在家长群、公众号、B 站看一堆"学霸经验"但自己没动笔</li>
+        <li><strong>考前 3 天还在刷新题</strong>：考前只做做过的题，目标是手感维持</li>
+      </ol>
+    </section>
+
+
+    <!-- ====== 十五 ====== -->
+    <section class="section" id="sec-15">
+      <div class="section-head">
+        <span class="section-num">SEC 15</span>
+        <h2>模板合集</h2>
+      </div>
+
+      <h3>模板 1 · 错题本单页</h3>
+<pre><code>【日期】YYYY-MM-DD　　【来源】XX 卷第 X 题　　【科目】物理／化学／生物
+【题目原文】（贴打印题 或 手抄，保留完整条件）
+
+【我的错解】（原封不动写出你当时怎么做的，包括错误步骤）
+
+【错误类型】☐ 知识漏洞　☐ 粗心失误　☐ 审题错误　☐ 方法不会
+
+【断点分析】（具体哪一步断了。例："我知道用能量守恒，但把重力势能基准面取错了"）
+
+【正解与关键步骤】（只写关键突破点，不抄完整解答）
+
+【引申考点】（这道题考了什么知识点，还可能怎么变形考）
+
+【两周后回刷结果】☐ 完全会　☐ 仍有卡点　☐ 需要再刷</code></pre>
+
+      <h3>模板 2 · 模考复盘表</h3>
+<pre><code>【考试】____________ 　【日期】__________ 　【用时】______ 分钟
+
+【原始分数】
+语文 __ / 数学 __ / 英语 __ / 物理 __ / 化学 __ / 生物 __ / 总分 __
+
+【排名】班级 __ / __  　校排 __ / __  　估算全省位次 __ %
+
+【赋分估算】化学 ______ 档（前 __%） / 生物 ______ 档（前 __%）
+
+──────────────────────
+【各科失分分析】每科填 3 条
+
+语文：
+1. 失分点：__________________　对应章节：__________
+2. 失分点：__________________　对应章节：__________
+3. 失分点：__________________　对应章节：__________
+
+（数学、英语、物理、化学、生物同上）
+
+──────────────────────
+【错误归类统计】
+☐ 知识漏洞 __ 题　☐ 粗心失误 __ 题
+☐ 审题错误 __ 题　☐ 方法不会 __ 题
+
+【三大高频失分（本次最痛的 3 条）】
+1. _____________________________________
+2. _____________________________________
+3. _____________________________________
+
+──────────────────────
+【下周行动 · 只写 3 条】
+1. _____________________________________
+2. _____________________________________
+3. _____________________________________
+
+【要加量的科目】__________　【要减量的科目】__________
+
+【下次同类模考目标】总分 ______（比这次 +__ 分）</code></pre>
+
+      <h3>模板 3 · 周计划 &amp; 周复盘</h3>
+<pre><code>══════════════════════════════════
+【第 __ 周 · 周计划】
+══════════════════════════════════
+
+本周大目标（只写 1 条）：________________________
+
+各科本周任务：
+物理：__________________________________
+化学：__________________________________
+生物：__________________________________
+数学：__________________________________
+语文：__________________________________
+英语：__________________________________
+
+每日执行表（简化版，打勾即可）：
+          周一  周二  周三  周四  周五  周六  周日
+早读      □    □    □    □    □    □    □
+物化生    □    □    □    □    □    □    □
+数学      □    □    □    □    □    □    □
+语文/英语 □    □    □    □    □    □    □
+错题整理  □    □    □    □    □    □    □
+
+本周必做 1 套模拟卷（安排在 ____ ）
+
+══════════════════════════════════
+【第 __ 周 · 周复盘】（周日晚填）
+══════════════════════════════════
+
+本周完成了大目标吗？☐ 完全 ☐ 部分 ☐ 未完成
+未完成的原因：________________________
+
+最大卡点：____________________________
+最大收获：____________________________
+
+下周要继续做的 1 件事：________________
+下周要停止做的 1 件事：________________
+
+本周睡眠平均 ____ 小时 / 日
+本周运动 ____ 次
+本周手机娱乐时长 ____ 小时</code></pre>
+
+      <h3>模板 4 · 赋分监控表</h3>
+<pre><code>┌──────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│  日期  │化学原始│化学班排│化学校排│化学估档│生物原始│生物班排│生物估档│
+├──────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤
+│ M/DD │        │        │        │        │        │        │        │
+│ M/DD │        │        │        │        │        │        │        │
+│ M/DD │        │        │        │        │        │        │        │
+└──────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+
+【全省位次反推】本校上一届 985 录取 __ 人 / 211 录取 __ 人 / 年级总人数 __
+　→ 校排前 __ 名 ≈ 全省 211 临界
+　→ 校排前 __ 名 ≈ 全省 985 临界
+
+【趋势线】在右侧画折线图，横轴日期，纵轴百分位（越小越靠前）
+
+【行动触发】
+☐ 向上 3 连 → 可小幅减少该科时间
+☐ 横盘 3 连 → 维持节奏
+☐ 向下 2 连 → ⚠️ 启动急救（时间从 1/3 加到 1/2）
+☐ 跌出目标档 → 重新评估目标 or 找专项辅导
+
+【本月结论】（一句话）：____________________________</code></pre>
+    </section>
+
+    <!-- ====== 十六 ====== -->
+    <section class="section" id="sec-16">
+      <div class="section-head">
+        <span class="section-num">SEC 16</span>
+        <h2>江苏专属赛道清单 <span class="badge badge-new">修订版独有</span></h2>
+      </div>
+
+      <div class="callout callout-info">
+        这一章是修订版独有的"避坑+加分"清单。每一条都是江苏 3+1+2 模式下容易被忽视的关键节点。<strong>漏一条都可能让 3 年备考价值打折</strong>。
+      </div>
+
+      <h3>A. 资格类（漏一条直接出局）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>节点</th><th>时间窗口</th><th>责任人</th><th>错过后果</th></tr></thead>
+          <tbody>
+            <tr><td><strong>学考通过</strong></td><td>高二上下学期 + 高三上补考</td><td>学生</td><td>政/史/地任一未过 = 失去本科资格</td></tr>
+            <tr><td><strong>高考报名</strong></td><td>高三上 11 月初</td><td>学生本人确认</td><td>无法参加高考</td></tr>
+            <tr><td><strong>高考体检</strong></td><td>高三下 3-4 月</td><td>学校统一组织</td><td>部分专业被限报</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>B. 助攻类（漏一条让分缩水 10-30 分）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>节点</th><th>时间窗口</th><th>责任人</th><th>价值</th></tr></thead>
+          <tbody>
+            <tr><td><strong>强基简章 + 报名</strong></td><td>高三下 3 月底-4 月中下旬</td><td>家长操作 + 学生确认</td><td>进名校通道，让分 5-15</td></tr>
+            <tr><td><strong>综评简章 + 报名</strong></td><td>高三下 3-5 月初</td><td>家长操作 + 学生确认</td><td>让分 10-20，江苏性价比最高</td></tr>
+            <tr><td><strong>学考 A 数</strong></td><td>高二期间</td><td>学生</td><td>6 个 A = 综评折算分顶格</td></tr>
+            <tr><td><strong>个人陈述（学生本人）</strong></td><td>高三上寒假初稿 + 3-4 月定稿</td><td>学生本人</td><td>面试围绕这份提问，代笔露馅</td></tr>
+            <tr><td><strong>强基体测训练</strong></td><td>高三上 9 月起每周 1 次</td><td>学生</td><td>体测不达标直接出局</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>C. 信息类（漏一条志愿填报失准）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>节点</th><th>时间窗口</th><th>责任人</th><th>价值</th></tr></thead>
+          <tbody>
+            <tr><td>一分一段表</td><td>高考出分后 1-2 天</td><td>家长</td><td>反推全省位次的核心工具</td></tr>
+            <tr><td>院校专业组代码 + 选科要求</td><td>高三下 4-5 月</td><td>家长</td><td>江苏志愿单位是组不是院校</td></tr>
+            <tr><td>目标校近 3 年录取分 + 位次</td><td>高三下 4-5 月</td><td>家长</td><td>冲稳保梯度的依据</td></tr>
+            <tr><td>专业受限名单</td><td>体检后立即核对</td><td>家长+学生</td><td>避免填了进不去</td></tr>
+            <tr><td><strong>40 个院校专业组志愿</strong></td><td>出分后 7-10 天</td><td>家长+学生</td><td>冲 10 + 稳 20 + 保 10</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>D. 心智类（漏一条状态崩盘）</h3>
+      <ul class="checklist">
+        <li><strong>每月底状态自评</strong>（睡眠/运动/提不起劲）— 任一连续 2 月红灯就调整</li>
+        <li><strong>每周休息日彻底放空</strong>（不在书桌前度过）</li>
+        <li><strong>模考崩盘只允许失落 1 天</strong></li>
+        <li><strong>考前 1 周不看模考成绩、不刷高考加油内容</strong></li>
+      </ul>
+
+      <h3>E. 江苏化学/生物赋分边界专项清单</h3>
+      <div class="card-grid">
+        <div class="mini-card">
+          <h5>🧪 化学高发失分 5 类</h5>
+          <ol style="margin:6px 0 0 18px;font-size:13px;color:var(--text-soft);line-height:1.7;">
+            <li>化工流程产品纯度计算 / 副反应判断</li>
+            <li>同分异构体限定条件下漏写一种</li>
+            <li>电极反应式系数没配平 / 漏 H₂O 或 OH⁻</li>
+            <li>实验题操作步骤描述不规范</li>
+            <li>离子方程式电荷守恒错位</li>
+          </ol>
+        </div>
+        <div class="mini-card">
+          <h5>🧬 生物高发失分 4 类</h5>
+          <ol style="margin:6px 0 0 18px;font-size:13px;color:var(--text-soft);line-height:1.7;">
+            <li>实验设计"无关变量控制"漏写一项</li>
+            <li>遗传题概率没用分数表达 / 没注明分母含义</li>
+            <li>简答用了"差不多""可能"等不确定语气</li>
+            <li>图像题横纵坐标没标单位</li>
+          </ol>
+        </div>
+      </div>
+      <p style="margin-top:10px;color:var(--text-soft);font-size:13.5px;">每周对照这 9 条自查，比泛泛说"规范书写"有用 10 倍。</p>
+    </section>
+
+    <div class="footer">
+      <em>计划制定后建议每月末复盘执行情况，根据实际模考成绩动态微调各科时间分配。</em><br>
+      最终目标不是完美执行这份计划，而是 <strong style="color:var(--accent);">每月都比上月更接近你想去的那所大学</strong>。<br><br>
+      修订版 · 2026 年 5 月
+    </div>
+  </main>
+</div>
+
+<button class="top-btn" id="topBtn" aria-label="回到顶部">↑</button>
+
+<script>
+  // theme toggle with persistence
+  (function() {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+
+  document.getElementById('themeBtn').addEventListener('click', function() {
+    var cur = document.documentElement.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    if (next === 'light') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    localStorage.setItem('theme', next);
+  });
+
+  // print
+  document.getElementById('printBtn').addEventListener('click', function() {
+    window.print();
+  });
+
+  // mobile TOC toggle
+  var tocToggle = document.getElementById('tocToggle');
+  var tocWrap = document.getElementById('tocWrap');
+  if (tocToggle) {
+    tocToggle.addEventListener('click', function() {
+      tocWrap.classList.toggle('open');
+    });
+  }
+
+  // close mobile TOC after click
+  document.querySelectorAll('#tocList a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      if (window.innerWidth <= 980) {
+        tocWrap.classList.remove('open');
+      }
+    });
+  });
+
+  // active TOC tracking via IntersectionObserver
+  var sections = document.querySelectorAll('.section[id]');
+  var tocLinks = document.querySelectorAll('#tocList a');
+  var idToLink = {};
+  tocLinks.forEach(function(l) {
+    var id = l.getAttribute('href').slice(1);
+    idToLink[id] = l;
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(function(l) { l.classList.remove('active'); });
+        var link = idToLink[entry.target.id];
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -65% 0px', threshold: 0 });
+
+  sections.forEach(function(s) { observer.observe(s); });
+
+  // progress bar + back-to-top
+  var progress = document.getElementById('progress');
+  var topBtn = document.getElementById('topBtn');
+
+  function updateScroll() {
+    var doc = document.documentElement;
+    var scrollTop = window.pageYOffset || doc.scrollTop;
+    var height = doc.scrollHeight - doc.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+
+    if (scrollTop > 400) {
+      topBtn.classList.add('show');
+    } else {
+      topBtn.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  updateScroll();
+
+  topBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
